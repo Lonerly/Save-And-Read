@@ -217,6 +217,7 @@ public class Frame extends JFrame implements ActionListener {
 		if (source == btnImport) {
 			System.out.println("Import | " + path);
 			try {
+				path = textPath.getText();
 				Import import1 = new Import(path);
 				amount = amountP;
 				price = priceP;
@@ -247,11 +248,10 @@ public class Frame extends JFrame implements ActionListener {
 		lblPriceN.setText(netto);
 		lblPriceB.setText(brutto);
 
-		path = textPath.getText();
-
 		if (source == btnExport) {
 			System.out.println("Export | " + path);
 			try {
+				path = textPath.getText();
 				Save save1 = new Save(path, amount, price, tax);
 			} catch (FileNotFoundException e1) {
 				System.out.println("Export failed");
@@ -270,9 +270,6 @@ public class Frame extends JFrame implements ActionListener {
 			System.out.println("Nieznana Akcja");
 		}
 		System.out.println("Akcja Przetworzona");
-		amountP = amount;
-		priceP = price;
-		taxP = tax;
 	}
 
 }
